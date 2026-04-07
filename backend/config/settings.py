@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv(
     "django-insecure-change-this-in-production"
 )
 DEBUG = env_bool("DJANGO_DEBUG", True)
-ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS", ["127.0.0.1", "localhost", "finallms.onrender.com"])
+ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS", ["127.0.0.1", "localhost", "finallms.onrender.com", "finallms.vercel.app"])
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -135,11 +135,11 @@ SIMPLE_JWT = {
 
 CORS_ALLOWED_ORIGINS = env_list(
     "DJANGO_CORS_ALLOWED_ORIGINS",
-    ["http://localhost:5173", "http://127.0.0.1:5173", "https://finallms.onrender.com"],
+    ["http://localhost:5173", "http://127.0.0.1:5173", "https://finallms.onrender.com", "https://finallms.vercel.app"],
 )
 CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = env_list(
     "DJANGO_CSRF_TRUSTED_ORIGINS",
-    ["http://localhost:5173", "http://127.0.0.1:5173", "https://finallms.onrender.com"],
+    ["http://localhost:5173", "http://127.0.0.1:5173", "https://finallms.onrender.com", "https://finallms.vercel.app"],
 )
