@@ -1,0 +1,8 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Link } from "react-router-dom";
+import Badge from "@/components/ui/Badge";
+import Button from "@/components/ui/Button";
+function CourseCard({ course }) {
+    return (_jsxs("article", { className: "flex h-full flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-soft transition-all duration-200 hover:shadow-soft-lg hover:scale-[1.02]", children: [_jsxs("div", { className: "flex flex-wrap items-center gap-2", children: [course.level ? _jsx(Badge, { label: course.level, tone: "info" }) : null, course.status ? (_jsx(Badge, { label: course.status, tone: course.status === "published" ? "success" : "warning" })) : null] }), _jsx("h3", { className: "mt-4 text-xl font-semibold text-text-primary", children: course.title }), _jsx("p", { className: "mt-3 text-sm text-text-secondary", children: course.description }), _jsxs("div", { className: "mt-6 space-y-2 text-sm text-text-secondary", children: [_jsxs("p", { children: ["Category: ", course.category || "General"] }), _jsxs("p", { children: ["Tutor: ", course.tutor ? `${course.tutor.first_name} ${course.tutor.last_name}` : "TBD"] }), _jsxs("p", { children: ["Enrollment: ", course.enrollment_count ?? 0] })] }), _jsxs("div", { className: "mt-8 flex gap-3", children: [_jsx(Link, { to: `/courses/${course.id}`, className: "flex-1", children: _jsx(Button, { fullWidth: true, children: "View course" }) }), _jsx(Link, { to: `/courses/${course.id}/materials`, className: "flex-1", children: _jsx(Button, { variant: "outline", fullWidth: true, children: "Materials" }) })] })] }));
+}
+export default CourseCard;
