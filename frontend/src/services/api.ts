@@ -2,7 +2,8 @@ import axios, { AxiosError, type InternalAxiosRequestConfig } from "axios";
 import { API_ENDPOINTS } from "@/services/endpoints";
 import { storage } from "@/utils/storage";
 
-const apiBaseURL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+// const apiBaseURL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+const apiBaseURL = import.meta.env.VITE_API_BASE_URL || "https://finallms.onrender.com";
 
 interface RetryableConfig extends InternalAxiosRequestConfig {
   _retry?: boolean;
